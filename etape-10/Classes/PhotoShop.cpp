@@ -1,8 +1,7 @@
 #include "PhotoShop.h"
-#include "Iterateur.h" // Assurez-vous d'inclure le fichier d'en-tête de la classe Iterateur
 
-int PhotoShop::numCourant = 1; // Initialisation de la variable statique
-
+PhotoShop PhotoShop::instance;
+int PhotoShop::numCourant=1;
 // Constructeur par défaut
 PhotoShop::PhotoShop() {}
 
@@ -85,20 +84,22 @@ Image* PhotoShop::getImageParId(int id)
 void PhotoShop::afficheImages() const
 {
     Iterateur<Image*> it(images);
-    while (!it.end())
+    for (it.reset() ; !it.end() ; it++)
     {
-        it->Affiche(); // Utilisez l'opérateur -> pour accéder aux membres de l'objet pointé par le pointeur
-        it++;
+        Image* i = (Image*) it;
+        i->Affiche();
+
     }
 }
 
 void PhotoShop::dessineImages() const
 {
     Iterateur<Image*> it(images);
-    while (!it.end())
+    for (it.reset() ; !it.end() ; it++)
     {
-        it->Dessine(); // Utilisez l'opérateur -> pour accéder aux membres de l'objet pointé par le pointeur
-        it++;
+        Image* i = (Image*) it;
+        i->Dessine();
+
     }
 }
 
@@ -106,14 +107,21 @@ void PhotoShop::dessineImages() const
 void PhotoShop::reset()
 {
     // Libérer la mémoire associée à la liste
-    for (Image* image : images)
+    for (Iterateur<Image*> it(images); !it.end(); ++it)
     {
-        delete image;
+        delete it;
     }
 
     // Vider la liste (libère automatiquement la mémoire)
-    images.clear();
+    images.estVide();
 
     // Réinitialiser numCourant à 1
     numCourant = 1;
+}
+
+// METHODE STATIQUE
+
+PhotoShop& PhotoShop::getInstance()
+{
+    return instance;
 }

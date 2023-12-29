@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "ArrayList.h"
+#include "Iterateur.h"
 #include "Image.h"
 
 
@@ -12,15 +13,23 @@ class PhotoShop
 
          ArrayList<Image*> images;
          static int numCourant;
+         static PhotoShop instance;
+
+         PhotoShop(const PhotoShop& p);
+         PhotoShop& operator=(const PhotoShop& p);
+
+         PhotoShop();
 
 
      public:
 
 
-         PhotoShop();
+         
          ~PhotoShop();
          void reset();
          void ajouteImage(Image* pImage);
+
+         static PhotoShop& getInstance();
 
          void afficheImages() const;
          void dessineImages() const;

@@ -7,12 +7,12 @@ template<class T>
 class Iterateur
 {
 private:
-    ArrayList<T>& a;
+    const ArrayList<T>& a;
     Cellule<T>* pcur;
 
 public:
-    Iterateur(ArrayList<T>& list);
-    int end();
+    Iterateur(const ArrayList<T>& list);
+    int end() const;
     void reset();
 
     char operator++();

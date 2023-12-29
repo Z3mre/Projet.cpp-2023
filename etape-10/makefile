@@ -3,13 +3,13 @@
 COMP=g++ -I Classes/ -Wall -D DEBUG
 
 
-Test10a:	Test10a.cpp objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/MyQT.o objets/Traitements.o objets/ArrayList.o objets/Iterateur.o objets/PhotoShop.o
-	echo "Creation de Test10a"
-	$(COMP) Test10a.cpp -o Test10a objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/MyQT.o objets/Traitements.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/ArrayList.o objets/Iterateur.o objets/PhotoShop.o -lSDL -lpthread -Wl,-O1 -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtWidgets -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtCore -I. -I. -I/usr/lib64/qt5/mkspecs/linux-g++ /usr/lib64/libQt5Widgets.so /usr/lib64/libQt5Gui.so /usr/lib64/libQt5Core.so /usr/lib64/libGL.so
+# Test10a:	Test10a.cpp objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/MyQT.o objets/Traitements.o objets/PhotoShop.o objets/ArrayList.o objets/Iterateur.o 
+# 	echo "Creation de Test10a"
+# 	$(COMP) Test10a.cpp -o Test10a objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/MyQT.o objets/Traitements.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/PhotoShop.o objets/ArrayList.o objets/Iterateur.o  -lSDL -lpthread -Wl,-O1 -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtWidgets -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtCore -I. -I. -I/usr/lib64/qt5/mkspecs/linux-g++ /usr/lib64/libQt5Widgets.so /usr/lib64/libQt5Gui.so /usr/lib64/libQt5Core.so /usr/lib64/libGL.so
 
-# Test10b:	Test10b.cpp objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/MyQT.o objets/Traitements.o objets/ArrayList.o objets/Iterateur.o objets/PhotoShop.o
-# 	echo "Creation de Test10b"
-# 	$(COMP) Test10b.cpp -o Test10b objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/MyQT.o objets/Traitements.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/ArrayList.o objets/Iterateur.o objets/PhotoShop.o -lSDL -lpthread -Wl,-O1 -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtWidgets -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtCore -I. -I. -I/usr/lib64/qt5/mkspecs/linux-g++ /usr/lib64/libQt5Widgets.so /usr/lib64/libQt5Gui.so /usr/lib64/libQt5Core.so /usr/lib64/libGL.so
+Test10b:	Test10b.cpp objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/MyQT.o objets/Traitements.o objets/ArrayList.o objets/Iterateur.o objets/PhotoShop.o
+	echo "Creation de Test10b"
+	$(COMP) Test10b.cpp -o Test10b objets/Exception.o objets/RGBException.o objets/XYException.o objets/Image.o objets/MyQT.o objets/Traitements.o objets/ImageNG.o objets/ImageRGB.o objets/ImageB.o objets/Dimension.o objets/Couleur.o objets/ArrayList.o objets/Iterateur.o objets/PhotoShop.o -lSDL -lpthread -Wl,-O1 -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtWidgets -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtCore -I. -I. -I/usr/lib64/qt5/mkspecs/linux-g++ /usr/lib64/libQt5Widgets.so /usr/lib64/libQt5Gui.so /usr/lib64/libQt5Core.so /usr/lib64/libGL.so
 
 
 objets/Exception.o:	Classes/Exception.cpp Classes/Exception.h
@@ -55,6 +55,10 @@ objets/MyQT.o:	Classes/MyQT.cpp Classes/MyQT.h
 objets/Traitements.o:	Classes/Traitements.cpp Classes/Traitements.h
 	echo "Creation de Traitements.o"
 	$(COMP) Classes/Traitements.cpp -c -o objets/Traitements.o
+	
+objets/PhotoShop.o:	Classes/PhotoShop.cpp Classes/PhotoShop.h
+	echo "Creation de PhotoShop.o"
+	$(COMP) Classes/PhotoShop.cpp -c -o objets/PhotoShop.o
 
 objets/ArrayList.o:	Classes/ArrayList.cpp Classes/ArrayList.h
 	echo "Creation de ArrayList.o"
@@ -64,9 +68,7 @@ objets/Iterateur.o:	Classes/Iterateur.cpp Classes/Iterateur.h
 	echo "Creation de Iterateur.o"
 	$(COMP) Classes/Iterateur.cpp -c -o objets/Iterateur.o
 
-objets/PhotoShop.o:	Classes/PhotoShop.cpp Classes/PhotoShop.h
-	echo "Creation de PhotoShop.o"
-	$(COMP) Classes/PhotoShop.cpp -c -o objets/PhotoShop.o
+
 
 
 clean:

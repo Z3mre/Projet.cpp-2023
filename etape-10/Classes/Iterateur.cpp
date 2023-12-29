@@ -1,16 +1,15 @@
 #include "Iterateur.h"
-
-
-
-
-template<class T>
-
-Iterateur<T>::Iterateur(ArrayList<T>& list) : a(list), pcur(list.ptete) {}
+#include "Image.h"
 
 
 template<class T>
 
-int Iterateur<T>::end()
+Iterateur<T>::Iterateur(const ArrayList<T>& list) : a(list), pcur(list.ptete) {}
+
+
+template<class T>
+
+int Iterateur<T>::end() const
 {
 	return pcur == 0;
 }
@@ -73,12 +72,7 @@ template class Iterateur<int>;
 #include "Couleur.h"
 template class Iterateur<Couleur>;
 
-#include "ImageB.h"
-template class Iterateur<ImageB>;
+template class Iterateur<Image*>;
 
-#include "ImageNG.h"
-template class Iterateur<ImageNG>;
 
-#include "ImageRGB.h"
-template class Iterateur<ImageRGB>;
 

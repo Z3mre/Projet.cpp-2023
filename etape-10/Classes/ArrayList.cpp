@@ -1,5 +1,5 @@
 #include "ArrayList.h"
-
+#include "Image.h"
 //----------------------------------
 //-------CONSTRUCTEURS
 //----------------------------------
@@ -228,11 +228,7 @@ template class ArrayList<int>;
 #include "Couleur.h"
 template class ArrayList<Couleur>;
 
-#include "ImageB.h"
-template class ArrayList<ImageB>;
 
-#include "ImageNG.h"
-template class ArrayList<ImageNG>;
+template class ArrayList<Image*>;
 
-#include "ImageRGB.h"
-template class ArrayList<ImageRGB>;
+
