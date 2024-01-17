@@ -107,15 +107,15 @@ void Essai2()
   cout << "********************************************************************" << endl;
   {
     ImageNG i;
-    {
+     {
       ImageNG i1("../images/bulles.bmp");  // Ajout d'un nouveau constructeur !!! --> a faire
       cout << "Voici i1 : "; i1.Affiche(); i1.Dessine(); 
 
-      cout << endl << ">>>>> i = i1;" << endl;
-      i = i1;
-      cout << ">>>>> Destruction de i1" << endl << endl;
-    }
-    cout << "Voici i : "; i.Affiche(); i.Dessine();
+       cout << endl << ">>>>> i = i1;" << endl;
+       i = i1;
+       cout << ">>>>> Destruction de i1" << endl << endl;
+     }
+     cout << "Voici i : "; i.Affiche(); i.Dessine();
 
     cout << endl << ">>>>> i2 = i3 = ImageNG(1,\"essai\",Dimension(400,200));" << endl;
     ImageNG i2,i3;

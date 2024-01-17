@@ -1,5 +1,6 @@
 #include "ImageNG.h"
 #include "MyQT.h"
+#include "Traitements.h"
 
 
 #include <string.h>
@@ -84,11 +85,11 @@ ImageNG::ImageNG(int d,const char* s, Dimension dim) : Image(d, s, dim)
 
 ImageNG::ImageNG(const ImageNG& p) : Image(p)
 {
-#ifdef DEBUG
+// #ifdef DEBUG
 
-		cout << ">>> ImageNG : constructeur de copie <<<" << endl;
+// 		cout << ">>> ImageNG : constructeur de copie <<<" << endl;
 
-#endif
+// #endif
 	
 
 	matrice = new int*[dimension.getLargeur()];
@@ -153,11 +154,11 @@ ImageNG::ImageNG(const char* f) : Image(f)
 ImageNG::~ImageNG()
 {
 
-	#ifdef DEBUG
+	// #ifdef DEBUG
 
-		cout << ">>> ImageNG : destructeur  <<<" << endl;
+	// 	cout << ">>> ImageNG : destructeur  <<<" << endl;
 
-	#endif
+	// #endif
 
 
 		for (int x=0 ; x<dimension.getLargeur() ; x++) 
@@ -649,7 +650,7 @@ int ImageNG::getMaximum() const
 	return max;
 }
 
-float ImageNG::getContraste() const
+float ImageNG::getContraste() const 
 {
 	float contraste;
 
@@ -658,6 +659,10 @@ float ImageNG::getContraste() const
 	return contraste;
 }
 
+string ImageNG::getType() const
+{
+	return "NG";
+}
 
 
 //----------------------------------

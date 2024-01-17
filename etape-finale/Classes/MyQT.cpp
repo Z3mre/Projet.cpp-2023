@@ -52,7 +52,6 @@ void MyQT::ViewImage(const ImageNG& image)
 void MyQT::ImportFromFile(ImageNG& image,const char* fichier)
 {
   
-
   QPixmap pixmap(fichier);
   if (pixmap.isNull()) return;  // exception ??
 
@@ -104,7 +103,7 @@ void MyQT::ExportToFile(const ImageNG& image, const char* fichier,const char* fo
 //***************************************************************************************
 //***** Images RGB **********************************************************************
 //***************************************************************************************
-/*
+
 void MyQT::ViewImage(const ImageRGB & image)
 {
   int largeur = image.getDimension().getLargeur();
@@ -176,11 +175,11 @@ void MyQT::ExportToFile(const ImageRGB & image, const char* fichier,const char* 
   // Ecriture sur disque
   pixmap.save(fichier,format);
 }
-*/
+
 //***************************************************************************************
 //***** Images B ************************************************************************
 //***************************************************************************************
-/*
+
 void MyQT::ViewImage(const ImageB & image)
 {
   int largeur = image.getDimension().getLargeur();
@@ -230,4 +229,3 @@ void MyQT::ExportToFile(const ImageB & image, const char* fichier,const char* fo
   // Ecriture sur disque
   pixmap.save(fichier,format);
 }
-*/

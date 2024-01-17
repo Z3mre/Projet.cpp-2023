@@ -66,6 +66,14 @@ ImageNG::ImageNG(int d,const char* s, Dimension dim) : Image(d, s, dim)
 
 	} 
 	
+	for(int i=0;i< dimension.getLargeur();i++)
+	{
+		
+		for(int j=0;j< dimension.getHauteur();j++)
+		{
+			matrice[i][j] = 0;
+		}
+	}
 	
 	setDimension(dim);
 

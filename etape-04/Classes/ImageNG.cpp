@@ -59,8 +59,9 @@ ImageNG::ImageNG(int d,const char* s, Dimension dim)
 
 	setId(d);
 	nom = NULL;
-
 	setNom(s);
+
+	
 
 	matrice = new int*[dimension.getLargeur()];
 	for (int x=0;x<dimension.getLargeur();x++)
@@ -68,6 +69,15 @@ ImageNG::ImageNG(int d,const char* s, Dimension dim)
 		matrice[x] = new int[dimension.getHauteur()];
 
 	} 
+
+	for(int i=0;i< dimension.getLargeur();i++)
+	{
+		
+		for(int j=0;j< dimension.getHauteur();j++)
+		{
+			matrice[i][j] = 0;
+		}
+	}
 	
 	
 	setDimension(dim);
@@ -84,7 +94,6 @@ ImageNG::ImageNG(const ImageNG& p)
 
 #endif
 	setId(p.getId());
-	nom = NULL;
 	setNom(p.getNom());
 
 	
@@ -125,10 +134,13 @@ ImageNG::ImageNG(const char* f)
 
 	#endif
 
+   
 
 	setId(0);
 	nom = NULL;
-	setNom("???");
+	setNom(f);
+
+
 
 	matrice = new int*[dimension.getLargeur()];
 	for (int x=0;x<dimension.getLargeur();x++)
@@ -138,8 +150,6 @@ ImageNG::ImageNG(const char* f)
 	} 
 
 	MyQT::ImportFromFile(*this,f);
-
-	
 
 	
 
